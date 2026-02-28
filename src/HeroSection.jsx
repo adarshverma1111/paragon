@@ -15,25 +15,33 @@ const HeroSection = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
+        {/* Make sure this file exists inside public folder */}
         <source src="/vedios.mp4" type="video/mp4" />
       </video>
 
-      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40 z-0"></div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/70 z-0"></div>
 
       {/* Navbar */}
-      <header className="absolute top-0 left-0 right-0 z-20 bg-white md:top-6 md:left-20 md:right-20 md:rounded-[40px]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+      <header
+        className="absolute top-0 left-0 right-0 z-20 
+        bg-white/95 backdrop-blur-md 
+        md:top-6 md:left-20 md:right-20 
+        md:rounded-[40px] shadow-xl"
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-between h-20">
 
+            {/* Logo */}
             <div className="flex items-center">
               <img
-                src="/logo.png"
+                src="/paragon-prime-logo1.png"
                 alt="Logo"
-                className="h-10 w-auto object-contain pl-[5px]"
-                style={{ transform: "scale(2.25)" }}
+                className="h-16 md:h-20 w-auto object-contain"
               />
             </div>
 
+            {/* Mobile Menu Button */}
             <button
               className="md:hidden text-black"
               onClick={() => setExpanded(prev => !prev)}
@@ -49,20 +57,22 @@ const HeroSection = () => {
               )}
             </button>
 
+            {/* Desktop Nav */}
             <nav className="hidden md:flex items-center space-x-10">
-              <a className="text-gray-500 hover:text-black text-sm cursor-pointer">About</a>
-              <a className="text-gray-500 hover:text-black text-sm cursor-pointer">Services</a>
-              <a className="text-gray-500 hover:text-black text-sm cursor-pointer">Industries</a>
+              <a className="text-gray-600 hover:text-black text-sm cursor-pointer">About</a>
+              <a className="text-gray-600 hover:text-black text-sm cursor-pointer">Services</a>
+              <a className="text-gray-600 hover:text-black text-sm cursor-pointer">Industries</a>
 
-              <button className="px-5 py-2 text-sm text-white bg-[#FB7118] rounded-full hover:bg-[#023A73] transition shadow-lg">
+              <button className="px-6 py-2 text-sm text-white bg-[#FB7118] rounded-full hover:bg-[#023A73] transition shadow-lg">
                 Contact Us
               </button>
             </nav>
           </div>
 
+          {/* Mobile Nav */}
           {expanded && (
-            <div className="md:hidden pb-4">
-              <div className="flex flex-col space-y-3">
+            <div className="md:hidden pb-6">
+              <div className="flex flex-col space-y-4">
                 <a className="text-gray-600 text-sm cursor-pointer">About</a>
                 <a className="text-gray-600 text-sm cursor-pointer">Services</a>
                 <a className="text-gray-600 text-sm cursor-pointer">Industries</a>
@@ -76,15 +86,15 @@ const HeroSection = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 flex items-center min-h-[80vh] md:min-h-screen">
+      {/* Hero Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 flex items-center min-h-[80vh] md:min-h-screen">
         <div className="lg:w-2/3">
 
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-sm tracking-widest text-gray-300 uppercase drop-shadow-lg"
+            className="text-sm tracking-widest text-gray-300 uppercase"
           >
             A Hub for Designers, Developers & Marketers
           </motion.p>
@@ -93,7 +103,8 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mt-6 text-4xl text-white sm:text-5xl lg:text-6xl xl:text-8xl drop-shadow-2xl"
+            className="mt-6 text-4xl font-bold leading-tight 
+            text-white sm:text-5xl lg:text-7xl xl:text-8xl"
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-orange-500">
               From Concept to
@@ -105,7 +116,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="max-w-lg mt-6 text-xl text-gray-200 drop-shadow-lg"
+            className="max-w-xl mt-6 text-lg text-gray-200"
           >
             We turn ideas into high-performance digital products. Our team builds smart,
             scalable, and user-focused software that solves real-world problems and drives growth.
@@ -115,7 +126,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="flex items-center gap-4 mt-8"
+            className="flex flex-wrap items-center gap-4 mt-8"
           >
             <button className="px-6 py-3 text-sm font-medium text-white rounded-full bg-[#102C4C] hover:opacity-90 transition shadow-xl">
               Learn More

@@ -6,14 +6,17 @@ import OurServices from './OurServices'
 import OurWork from './OurWork'
 import PartnershipSlider from './PartnershipSlider'
 import SoftwareSolutions from './SoftwareSolutions'
+import WelcomePage from './WelcomePage'
 
 function App() {
 
   return (
     <>
+    
     <HeroSection/>
     <OurWork/>
     <PartnershipSlider/>
+    <WelcomePage/>
     <SoftwareSolutions/>
     <OurServices/>
        <OurClients/>
